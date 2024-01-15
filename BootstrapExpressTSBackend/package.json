@@ -10,8 +10,8 @@
     "serve": "node dist/index.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "prettier": "prettier \"**/*.{js,jsx,json,md}\" --check",
-    "prettier:fix": "prettier \"**/*.{js,jsx,json,md}\" --write"
+    "prettier": "prettier \"**/*.{js,jsx,json,md,ts}\" --check",
+    "prettier:fix": "prettier \"**/*.{js,jsx,json,md,ts}\" --write"
   },
   "repository": {
     "type": "git",
