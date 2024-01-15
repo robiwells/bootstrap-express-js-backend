@@ -1,11 +1,16 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
+  "parserOptions": { // add this object
+    "tsconfigRootDir": "./",
+    "project": ["./tsconfig.json"],
+  },
   "plugins": [
     "@typescript-eslint",
     "eslint-plugin-node",
     "mocha",
-    "eslint-plugin-require"
+    "eslint-plugin-require",
+    "import"
   ],
   "extends": [
     "eslint:recommended",
@@ -15,6 +20,9 @@
     "prettier"
   ],
   "rules": {
+    "no-throw-literal": "off",
+    "@typescript-eslint/no-throw-literal": "error",
+    "node/no-missing-import": "off",
     "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     "node/no-unsupported-features/es-syntax": [
       "error",
@@ -22,6 +30,20 @@
         "version": ">=13.0.0",
         "ignores": ["modules"]
       }
-    ]
+    ],
+    "node/no-unpublished-import": ["error", {
+      "allowModules": ["module-alias"]
+    }],
+    "import/no-unresolved": "error",
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }
