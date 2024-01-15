@@ -1,10 +1,10 @@
-import { User } from './users-types';
+import { User, UserDAO } from './users-types';
 
 const users: User[] = [];
 
 let id = 0;
 
-class UserDAO {
+export class DefaultUserDAO implements UserDAO {
   public async create(username: string, email: string): Promise<User> {
     const user: User = {
       id: id++,
@@ -47,5 +47,3 @@ class UserDAO {
     return Promise.resolve(true);
   }
 }
-
-export const userDAO = new UserDAO();
