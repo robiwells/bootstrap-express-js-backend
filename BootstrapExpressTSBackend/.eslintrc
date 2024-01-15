@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-node",
+    "mocha",
+    "eslint-plugin-require"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:node/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      {
+        "version": ">=13.0.0",
+        "ignores": ["modules"]
+      }
+    ]
+  }
+}
